@@ -1,0 +1,13 @@
+[Unit]
+Description=Klipper DHT service
+After=klipper.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/klippy-env/bin/python /home/pi/klipper-dht/dht.py
+Restart=always
+RestartSec=5
